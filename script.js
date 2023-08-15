@@ -1,8 +1,17 @@
 /* 이 코드를 전부 복사후 새로 코드를 만든 후에 붙여넣으먼 됩니다.
 안드로이드 버전 11? 이상에서 작동합니다? */
-var data = require('info');
-function send(room, msg, sender, isGroupChat, replier, imageDB, packageName, threadId, userId, chanId, usId) {
+var data = require("info");
+var cmd = data.cmd;
+var place = data.place;
+var shop1 = data.shop.first;
+var shop2 = data.shop.second;
+function fish(r, msg, s, isGC, chan, Id) {
+  if(cmd.join.includes(msg)) {
 
+  }
+}
+function send(r, msg, s, isGC, rp, iDB, pN, threadId, userId, chanId, usId) {
+fish(r, msg, s, isGC, chanId, usId);
 }
 
 /* onNotificationPosted 함수로 내가 만든거 아닙니다? */
