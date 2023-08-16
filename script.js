@@ -5,13 +5,17 @@ var cmd = data.cmd;
 var place = data.place;
 var shop1 = data.shop.first;
 var shop2 = data.shop.second;
-function fish(r, msg, s, isGC, chan, Id) {
-  if(cmd.join.includes(msg)) {
-
+var setting = require("setting");
+var fisher = setting.fisher;
+var fishered = setting.fishered;
+var ability = setting.ability;
+function fish(r, m, s, isGC, chan, Id) {
+  if(cmd.join.includes(m)) {
+  
   }
 }
-function send(r, msg, s, isGC, rp, iDB, pN, threadId, userId, chanId, usId) {
-fish(r, msg, s, isGC, chanId, usId);
+function send(replier, msg, sender, isGroupChat, rp, iDB, pN, threadId, userId, chanId, usId) {
+fish(replier, msg, sender, isGroupChat, chanId, usId);
 }
 
 /* onNotificationPosted 함수로 내가 만든거 아닙니다? */
