@@ -1,41 +1,6 @@
 const scriptName = "낚시봇";
 let key = "gpt 키";
-function getRoomInfo(link) {
-let g = org.jsoup.Jsoup.connect(link).ignoreContentType(true).get()
-let title = g.select("head > meta:nth-child(4)").attr("content")
-if (title == "카카오톡 오픈채팅") {
-return {
-"page": 0,
-"count": 0,
-"totalCount": 0,
-"status": 0
-};
-} else {
-let urls = [`https://open.kakao.com/c/search/unified?q=` + title + `&c=100&p=1`, `https://open.kakao.com/c/search/unified?q=` + title + `&c=100&p=2`, `https://open.kakao.com/c/search/unified?q=` + title + `&c=100&p=3`, `https://open.kakao.com/c/search/unified?q=` + title + `&c=100&p=4`, `https://open.kakao.com/c/search/unified?q=` + title + `&c=100&p=5`];
-let requests = urls.map(url => org.jsoup.Jsoup.connect(url).ignoreContentType(true).get().text())
-for (let c in requests) {
-let tar = JSON.parse(requests[c])
-if (tar.items.length == 0) {
-result = {
-"page": 0,
-"count": 0,
-"totalCount": 0,
-"status": 0
-}
-break;
-} else {
-let b = tar.items.find((obj) => obj.lu === link);
-if (b == undefined) {
-continue;
-} else {
-result = b
-break
-}
-}
-}
-return result;
-}
-}
+
 /**
 * (string) room
 * (string) sender
@@ -573,7 +538,7 @@ replier.reply("[" + hash + "님은 관리자 권한이 없어!]");
 }
 }
 
-if (msg == ",미끼강화"||msg ==",미끼 강화"||msg == ",먹이강화"||msg == ",먹이 강화"||msg == ",be") {
+if (msg == ",미끼강화"||msg ==",미끼 강화"||msg == ",먹이강화"||msg == ",먹이 강화"||msg == ",be") { 
 if (lv[hash].co >= lv[hash].exp) {
 lv[hash].per += lv[hash].bid;
 lv[hash].bid *= 1.3;
@@ -586,7 +551,7 @@ replier.reply("[" + nick + "님! 돈이 부족해!]\n\n필요한 돈 : " + numbe
 }
 }
 
-if (msg == ",낚싯대 강화"||msg == ",낚싯대강화"||msg == ",낚시대강화"||msg == ",낚시대 강화"||msg == ",fe") { 
+if (msg == ",낚싯대 강화"||msg == ",낚싯대강화"||msg == ",낚시대강화"||msg == ",낚시대 강화"||msg == ",fe") {
 if (lv[hash].co >= lv[hash].ng) {
 lv[hash].gam += 6;
 lv[hash].clt -= 400;
@@ -1186,7 +1151,6 @@ function onNotificationPosted(sbn, sm) {
 let packageName = sbn.getPackageName();
 if (!packageName.startsWith("com.kakao.tal")) return;
 
-//chat_id = sbn.getKey().split("|")[3];
 chat_id = sbn.getTag();
 log_id = sbn.getNotification().extras.get("chatLogId");
 }
@@ -1211,7 +1175,7 @@ const system = android.os.SystemClock;
 const elapsedMillis = system.elapsedRealtime();
 const currentTimeMillis = java.lang.System.currentTimeMillis();
 const deviceUptimeMillis = elapsedMillis;
-const kstOffsetMillis = 9 * 60 * 60 * 1000; // KST = UTC +9
+const kstOffsetMillis = 9 * 60 * 60 * 1000;
 const kstTimeMillis = currentTimeMillis - deviceUptimeMillis + kstOffsetMillis;
 const kstTime = new Date(kstTimeMillis).toLocaleString();
 
@@ -1263,4 +1227,4 @@ return result;
 let result = value.ogUrl;
 return result;
 }
-}
+            }
