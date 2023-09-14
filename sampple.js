@@ -45,7 +45,7 @@ return result;
 * (string) imageDB.getProfileBase64()
 * (string) packageName
 */
-const admin = [1773727499];//관리자 해시 ex. const admin = ["123456789", "321654987"];
+const admin = [1773727499];
 const FS = FileStream, path = '/sdcard/lvcbal2.json';
 if (!new java.io.File(path).canRead()) FS.write(path, '{}');
 var lv = JSON.parse(FS.read(path));
