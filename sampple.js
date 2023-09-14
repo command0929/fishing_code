@@ -573,7 +573,7 @@ replier.reply("[" + hash + "님은 관리자 권한이 없어!]");
 }
 }
 
-if (msg == ",미끼강화"||msg ==",미끼 강화"||msg == ",먹이강화"||msg == ",먹이 강화"||msg == ",be") { //cm 즉 낚시할때 물고기 크기제한 증가
+if (msg == ",미끼강화"||msg ==",미끼 강화"||msg == ",먹이강화"||msg == ",먹이 강화"||msg == ",be") {
 if (lv[hash].co >= lv[hash].exp) {
 lv[hash].per += lv[hash].bid;
 lv[hash].bid *= 1.3;
@@ -586,7 +586,7 @@ replier.reply("[" + nick + "님! 돈이 부족해!]\n\n필요한 돈 : " + numbe
 }
 }
 
-if (msg == ",낚싯대 강화"||msg == ",낚싯대강화"||msg == ",낚시대강화"||msg == ",낚시대 강화"||msg == ",fe") { //물고기를 팔면 얻는 돈 증가
+if (msg == ",낚싯대 강화"||msg == ",낚싯대강화"||msg == ",낚시대강화"||msg == ",낚시대 강화"||msg == ",fe") { 
 if (lv[hash].co >= lv[hash].ng) {
 lv[hash].gam += 6;
 lv[hash].clt -= 400;
