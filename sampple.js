@@ -351,6 +351,7 @@ lv[hash].낚이 = nac[Math.floor(Math.random() * nac.length)];
 lv[hash].co -= lv[hash].낚비;
 lv[hash].낚비 *= 2;
 lv[hash].낚등 = Math.floor(Math.random() * 100);
+if(admin.includes(hash)) lv[hash].낚등 = 100;
 if (lv[hash].낚등 >= 0 && lv[hash].낚등 <= 50) {
 lv[hash].낚결.push("일반");
 lv[hash].낚버 = Math.random() * 1 + 1;
